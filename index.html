@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/757a7d392f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <title>JavaScript and the DOM</title>
+    <script src="/scripts/nav.js" defer></script>
+  </head>
+  <body>
+    <!-- primary header -->
+    <header class="primary-header flex">
+      <div class="logo">
+        <a href="#"><i class="fa-solid fa-circle-h"></i></a>
+      </div>
+      <!-- nav -->
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+        <i id="toggle-icon" class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation underline-indicators flex nav-link"
+        >
+          <li class="active"><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container blog-post flow">
+      <!-- hero section -->
+      <section id="hero">
+        <h1>JavaScript and the DOM</h1>
+        <img
+          src="./assets/blog-images/laptop-knee.jpg"
+          alt="Black and white photograph two people working together."
+        />
+      </section>
+      <section>
+        <h2 class="prompt">
+          Give an analogy to describe the differences between HTML and CSS
+        </h2>
+
+        <p>
+          As an analogy, think of a magazine. The magazine contains lots of
+          pictures and text. The text includes big headings, smaller headings
+          and paragraphs to give it structure and show the hierarchy of the
+          information represented. If this were a web page, all this content
+          would be implemented with HTML. In addition to writers and
+          photographers, the magazine owner also employs designers to make it
+          look nice. Designers would decide which type fonts to use, the size of
+          the headings, the colours on the page, how big to display the photos
+          and where to place everything on the page. On a web page all of this
+          styling would be done with CSS.
+        </p>
+      </section>
+      <section>
+        <h2 class="prompt">
+          Explain control flow and loops using an example process from everyday
+          life, for example 'waking up' or 'brushing your teeth'. (But not those
+          ones).
+        </h2>
+
+        <p>
+          If you had to get a computer to make you some hot drinks on a cold
+          winter's morning, you'd need to give it very explicit instructions.
+          These instructions would use control flows and loops. For example, you
+          and your family or flatmates might each want tea, coffee or a default
+          of cocoa. You could use an <code>if else</code> structure for this:
+        </p>
+        <p>
+          If the human wants tea, put a tea bag in the cup.<br />Else if the
+          human wants coffee, add coffee to the cup. <br />Otherwise, add hot
+          chocolate powder.<br />
+        </p>
+        <p>
+          You could then use a <code>while</code> loop to heat the water,
+          telling the computer that while the water is less than 100 degrees,
+          keep incrementing the temperature by 1 degree.
+        </p>
+        <p>
+          So that you don't have to intervene after one cup is prepared to
+          instruct the computer about the next cup, you could put the
+          preferences of each person in a special kind of list called an
+          'array'. Then, you could use a <code>for</code> loop that tells the
+          computer to repeatedly go through the process of adding the required
+          powder or bag to each cup until it has made a cup for each member of
+          the household (as listed in the array).
+        </p>
+      </section>
+      <section>
+        <h2 class="prompt">
+          Describe what the DOM is and an example of how you might interact with
+          it.
+        </h2>
+
+        <p>
+          DOM stands for Document Object Model. It is a representation of a web
+          page and acts as an interface that we can use to manipulate the page's
+          content, styles and structure with JavaScript.
+        </p>
+        <p>
+          We can select different elements in the DOM. We usually do this using
+          either their id, class or tag name. Here is an example of how we could
+          select a heading by its id and then manipulate it, changing its text.
+        </p>
+        <p class="code-block">
+          // HTML <br />
+
+          &lt;h1 id=&quot;hero-title&quot;&gt;My Blog&lt;/h1&gt;<br />
+
+          // JavaScript<br />
+
+          const heroTitle = document.getElementById('hero-title');<br />
+          heroTitle.innerHTML = 'Our Blog';<br />
+        </p>
+        <p>
+          As you can see, JavaScript and the DOM give us powerful control over
+          web pages.
+        </p>
+      </section>
+      <section>
+        <h2 class="prompt">
+          Explain the difference between accessing data from arrays and objects
+        </h2>
+
+        <p>
+          Arrays are indexed lists of elements. They are zero-indexed meaning we
+          start counting at 0, so in the following array the 'papaya' element in
+          position 0 and the 'mango' is in position 1.
+        </p>
+        <p><code>const fruit = ['papaya', 'mango', 'guava', 'lucuma']</code></p>
+        <p>To access the data using JavaScript, we would type:</p>
+        <p><code>const firstFruit = fruit[0]</code></p>
+        <p><code>const secondFruit = fruit[1]</code></p>
+        <p>A JavaScript object, on the other hand, looks like this</p>
+        <p>
+          <code
+            >const lucuma = {colour: 'orange', taste: 'sweet', uses: ['in ice
+            cream', 'in milk shakes']}</code
+          >
+        </p>
+        <p>
+          To access the taste of lucuma, we would type either one of the
+          following (both work):
+        </p>
+        <p><code>const lucumaTaste = lucuma.taste</code></p>
+        <p>or</p>
+        <p><code>const lucumaTaste = lucuma['taste']</code></p>
+        <p>
+          In either case, when we check the value of lucumaTaste, we will see
+          that its value is 'sweet'.
+        </p>
+      </section>
+      <section>
+        <h2 class="prompt">
+          Explain what functions are and why they are useful
+        </h2>
+
+        <p>
+          A function contains one or more instructions for the computer to carry
+          out. We write these instructions inside the body of the function and
+          we give the function a name. Then whenever that function's name is
+          called, the computer will carry out the instructions contained in that
+          function's body. This is extremely useful because otherwise we would
+          have to keep repeating ourselves every time we wanted the computer to
+          do that same thing, which would be prohibitively time consuming and
+          unwieldy.
+        </p>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer id="contact" class="flex">
+      <p>© 2022</p>
+      <ul class="flex">
+        <li>
+          <a
+            href="https://github.com/hannah-robinson/"
+            target="_blank"
+            title="My GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="My Slack profile"
+            ><i class="fab fa-slack"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
